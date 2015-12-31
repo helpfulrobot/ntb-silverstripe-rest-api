@@ -4,7 +4,8 @@
  * Rest test class can work as base class for your functional tests. It provides some helpful methods to test your rest
  * api more easily.
  */
-abstract class RestTest extends SapphireTest {
+abstract class RestTest extends SapphireTest
+{
 
     /**
      * The namespace of your api.
@@ -20,7 +21,8 @@ abstract class RestTest extends SapphireTest {
      */
     protected $sessionRoute = 'sessions';
 
-    public function setUp() {
+    public function setUp()
+    {
         parent::setUp();
         $this->defaultToken = Config::inst()->get('TokenAuth', 'DevToken');
         // clear cache
@@ -40,7 +42,8 @@ abstract class RestTest extends SapphireTest {
      * @return array
      * @throws SS_HTTPResponse_Exception
      */
-    protected function makeApiRequest($path, $options=[]) {
+    protected function makeApiRequest($path, $options=[])
+    {
         $settings = array_merge([
             'session' => null,
             'token' => null,
@@ -69,7 +72,8 @@ abstract class RestTest extends SapphireTest {
      * @param string $password the password for the user
      * @return array the current session with `token`
      */
-    protected function createSession($email='considine.colby@gmail.com', $password='password') {
+    protected function createSession($email='considine.colby@gmail.com', $password='password')
+    {
         $data = [
             'email' => $email,
             'password' => $password

@@ -3,7 +3,8 @@
 /**
  * Interface for authentication mechanisms.
  */
-interface IAuth {
+interface IAuth
+{
 
     /**
      * @param string $email the email of the
@@ -13,11 +14,11 @@ interface IAuth {
      */
     public static function authenticate($email, $password);
 
-	/**
-	 * @param Member $member
-	 * @return ApiSession
-	 */
-	public static function createSession($member);
+    /**
+     * @param Member $member
+     * @return ApiSession
+     */
+    public static function createSession($member);
 
     /**
      * @param SS_HTTPRequest $request
